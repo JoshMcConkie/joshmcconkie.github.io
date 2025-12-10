@@ -57,7 +57,7 @@ Some things I like to build and break:
 - Robotics (especially dynamics and feedback)  
 - Signals & systems, signal processing  
 - Quantum-adjacent engineering and photonics  
-- Applied math that touches the real world  
+- Applied math that touches the real world   
 - Teaching, explaining, and communicating technical ideas
 
 ---
@@ -71,7 +71,7 @@ Some things I like to build and break:
 
 **Math / CS Areas**
 
-
+  
 **Tools**
 
 - Git & GitHub  
@@ -90,20 +90,6 @@ I’m aiming long-term at work that combines:
 - **Teaching & communication** (helping others understand complex ideas)  
 
 I’m interested in paths that lead toward **robotics/control**, **applied math**, or **quantum-related engineering**, likely through graduate school.
-
----
-
-## Elsewhere on the Internet
-
-- GitHub: [github.com/your-username](https://github.com/your-username)  
-- LinkedIn: [linkedin.com/in/your-handle](https://www.linkedin.com)  
-- Email: `you@example.com`
-
-*(Replace these with your actual links.)*
-
----
-
-## Contact
 
 If you're working on:
 
