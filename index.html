@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Josh McConkie — BYU ACME student. Robotics, control, estimation, signals & systems." />
+  <meta name="description" content="Josh McConkie — BYU ACME student. Autonomy, control, estimation, optimization." />
   <meta name="theme-color" content="#0b0f19" />
   <title>Josh McConkie</title>
 
@@ -169,7 +169,7 @@
         <div class="dot" aria-hidden="true"></div>
         <div>
           <b>Josh McConkie</b>
-          <span>BYU <span class="mono">ACME</span> • Robotics • Control • Estimation</span>
+          <span>BYU <span class="mono">ACME</span> • Autonomy • Control • Estimation • Optimization</span>
         </div>
       </div>
 
@@ -192,10 +192,10 @@
 
   <main class="wrap">
     <section class="card hero" aria-label="Intro">
-      <h1>Math-forward autonomy, built on real systems.</h1>
+      <h1>Autonomy & control, built on real systems.</h1>
       <p class="tagline">
         I’m a <strong>BYU ACME</strong> (Applied &amp; Computational Mathematics) student working toward a PhD track in
-        <strong>controls/robotics</strong>. I’m especially drawn to <strong>real-time control</strong>: making decisions under constraints,
+        <strong>autonomous systems and control</strong>. I’m especially drawn to <strong>real-time control</strong>: making decisions under constraints,
         reacting fast, and adjusting when the world inevitably gets messy (noise, delays, saturation, and hardware that refuses to behave).
       </p>
 
@@ -205,7 +205,7 @@
         <span class="chip">state estimation</span>
         <span class="chip">signals &amp; systems</span>
         <span class="chip">optimization</span>
-        <span class="chip">embedded + sensors</span>
+        <!-- <span class="chip">embedded + sensors</span> -->
         <span class="chip">learning for autonomy (exploring)</span>
       </div>
     </section>
@@ -218,9 +218,12 @@
           My projects are where that foundation gets stress-tested. I’m especially interested in estimation + control
           loops that make good <strong>real-time decisions under constraints</strong> and stay stable and trustworthy in the real world.
         </p>
-    </br>
-        <p>
-            <strong>Tools: </strong>Python, C++, Julia, Arduino, Linux, Git.
+        <p style="margin-top:12px">
+          <strong>Tools:</strong> Python, C++, Julia, Arduino, Linux, Git.
+        </p>
+        <p style="margin-top:12px">
+          <strong>Autonomy direction:</strong> I’m building toward research in real-time autonomy (controls + estimation + optimization),
+          and I’m looking for opportunities to apply these skills on real systems.
         </p>
       </section>
 
@@ -231,7 +234,7 @@
             <b>Self-balancing table (ball-on-plate)</b>
             <small>Closed-loop control + <strong>computer vision</strong> tracking for state estimation (camera-based ball position) as a compact autonomy testbed.</small>
             <div class="links">
-              <a href="https://github.com/JoshMcConkie/control-lab" target="_blank" rel="noreferrer">Repo</a>
+              <a href="https://github.com/JoshMcConkie/control-lab/tree/main/self-balancing-table" target="_blank" rel="noreferrer">Repo</a>
             </div>
           </div>
           <div class="item">
@@ -251,9 +254,9 @@
       <section id="focus" class="card panel">
         <h2>Current focus</h2>
         <div class="list">
-          <div class="item"><b>Control + robustness</b><small>Real-time decision-making, optimization-based control under constraints (currently learning MPC), stability, and failure modes.</small></div>
-          <div class="item"><b>Estimation</b><small>Kalman filtering, sensor fusion, and system ID.</small></div>
-          <div class="item"><b>Signals &amp; systems</b><small>Filtering and frequency-domain intuition.</small></div>
+          <div class="item"><b>Control + robustness</b><small>Real-time decision-making, constraint-aware control (currently learning MPC), trajectory/attitude intuition, stability, and failure modes.</small></div>
+          <!-- <div class="item"><b>Estimation</b><small>Kalman filtering, sensor fusion, and system ID—core for navigation (IMU + vision + other sensors).</small></div> -->
+          <div class="item"><b>Signals &amp; systems</b><small>Filtering + frequency-domain intuition for sensing, control design, and system ID.</small></div>
           <div class="item"><b>Learning for autonomy (exploring)</b><small>Taking an ML/RL course next semester; interested in where learning fits cleanly into perception, estimation, and control.</small></div>
         </div>
       </section>
