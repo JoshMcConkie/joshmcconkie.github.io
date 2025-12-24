@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Josh McConkie — BYU ACME student. Robotics, control, estimation, signals & systems." />
+  <meta name="theme-color" content="#0b0f19" />
+  <title>Josh McConkie</title>
+
+  <style>
+    :root{
+      --bg: #070a12;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.085);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.68);
+      --faint: rgba(255,255,255,.45);
+      --border: rgba(255,255,255,.12);
+      --shadow: 0 14px 48px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 22px;
+      --max: 980px;
+      --accent: #8ae1ff;
+      --accent2:#c6ff9e;
+      --link: #b5e7ff;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f6f7fb;
+        --panel: rgba(0,0,0,.045);
+        --panel2: rgba(0,0,0,.065);
+        --text: rgba(0,0,0,.88);
+        --muted: rgba(0,0,0,.62);
+        --faint: rgba(0,0,0,.44);
+        --border: rgba(0,0,0,.12);
+        --shadow: 0 16px 55px rgba(10,20,40,.12);
+        --link:#0a4b70;
+      }
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: var(--sans);
+      color: var(--text);
+      background:
+        radial-gradient(1100px 650px at 10% 0%, rgba(138,225,255,.16), transparent 55%),
+        radial-gradient(850px 560px at 92% 14%, rgba(198,255,158,.12), transparent 60%),
+        var(--bg);
+      letter-spacing: .2px;
+    }
+    a{color:var(--link); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{max-width: var(--max); margin:0 auto; padding: 26px 16px 60px;}
+
+    header{
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(0,0,0,.22), rgba(0,0,0,0));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      z-index: 10;
+    }
+    @media (prefers-color-scheme: light){
+      header{background: linear-gradient(to bottom, rgba(255,255,255,.7), rgba(255,255,255,0)); border-bottom: 1px solid rgba(0,0,0,.06);}
+    }
+
+    .nav{
+      max-width: var(--max);
+      margin:0 auto;
+      padding: 14px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .brand{display:flex; align-items:center; gap:12px; min-width: 250px;}
+    .dot{
+      width: 12px; height: 12px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(138,225,255,.12);
+    }
+    .brand b{font-weight: 780}
+    .brand span{color:var(--muted); font-size: 13px; display:block; margin-top:2px}
+
+    nav{display:flex; gap:6px; flex-wrap:wrap; justify-content:flex-end}
+    nav a{
+      font-size: 14px;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 12px;
+    }
+    nav a:hover{color: var(--text); background: var(--panel); text-decoration:none;}
+
+    .pillRow{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .pill{
+      border: 1px solid var(--border);
+      background: var(--panel);
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--text);
+    }
+    .pill:hover{background: var(--panel2)}
+
+    .card{
+      background: linear-gradient(180deg, var(--panel), rgba(255,255,255,.02));
+      border: 1px solid var(--border);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+    }
+
+    .hero{margin-top: 18px; padding: 22px 20px;}
+    h1{
+      margin:0;
+      font-size: clamp(32px, 4.8vw, 52px);
+      line-height: 1.06;
+      letter-spacing: -0.7px;
+    }
+    .tagline{margin: 10px 0 0; color: var(--muted); font-size: 16px; line-height: 1.55; max-width: 70ch;}
+    .tagline strong{color: var(--text); font-weight: 750;}
+
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top: 14px;}
+    .chip{
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--faint);
+      border: 1px solid var(--border);
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.03);
+    }
+
+    .grid{display:grid; grid-template-columns: 1.1fr .9fr; gap: 14px; margin-top: 14px;}
+    @media (max-width: 900px){ .grid{grid-template-columns: 1fr;} }
+
+    .panel{padding: 16px 16px;}
+    .compact{padding: 13px 14px;}
+    .compact h2{font-size: 15px; margin-bottom: 8px;}
+    .compact p{font-size: 13.5px;}
+    .compact .list{gap: 8px; grid-template-columns: 1fr 1fr;}
+    .compact .item{padding: 10px;}
+    @media (max-width: 700px){ .compact .list{grid-template-columns: 1fr;} }
+
+    h2{margin:0 0 10px; font-size: 17px; letter-spacing: -0.2px;}
+    p{margin:0; color: var(--muted); line-height: 1.6; font-size: 14.5px;}
+
+    .list{margin-top: 12px; display:grid; gap: 10px;}
+    .item{border:1px solid var(--border); border-radius: var(--radius); padding: 12px; background: rgba(255,255,255,.03);}
+    .item b{display:block; font-size: 14px; margin-bottom: 4px}
+    .item small{display:block; color: var(--muted); line-height: 1.45}
+    .item .links{margin-top: 8px; display:flex; gap:10px; flex-wrap:wrap}
+    .item .links a{font-size: 13px}
+
+    footer{margin-top: 18px; color: var(--muted); font-size: 13px; display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.08);}
+    @media (prefers-color-scheme: light){ footer{border-top: 1px solid rgba(0,0,0,.08)} }
+    .mono{font-family: var(--mono)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="dot" aria-hidden="true"></div>
+        <div>
+          <b>Josh McConkie</b>
+          <span>BYU <span class="mono">ACME</span> • Robotics • Control • Estimation</span>
+        </div>
+      </div>
+
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#coursework">Coursework</a>
+        <a href="#focus">Focus</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="pillRow" aria-label="Links">
+        <a class="pill" href="./B_Joshua_McConkie_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+        <a class="pill" href="https://github.com/JoshMcConkie" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="pill" href="https://www.linkedin.com/in/joshuamcconkie" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="pill" href="mailto:joshuamcconkie@gmail.com">Email</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card hero" aria-label="Intro">
+      <h1>Math-forward autonomy, built on real systems.</h1>
+      <p class="tagline">
+        I’m a <strong>BYU ACME</strong> (Applied &amp; Computational Mathematics) student working toward a PhD track in
+        <strong>controls/robotics</strong>. I’m especially drawn to <strong>real-time control</strong>: making decisions under constraints,
+        reacting fast, and adjusting when the world inevitably gets messy (noise, delays, saturation, and hardware that refuses to behave).
+      </p>
+
+      <div class="chips" aria-label="Keywords">
+        <span class="chip">BYU ACME</span>
+        <span class="chip">real-time control</span>
+        <span class="chip">state estimation</span>
+        <span class="chip">signals &amp; systems</span>
+        <span class="chip">optimization</span>
+        <span class="chip">embedded + sensors</span>
+        <span class="chip">learning for autonomy (exploring)</span>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Main content">
+      <section id="about" class="card panel">
+        <h2>About</h2>
+        <p>
+          ACME is where I’m building the rigorous foundation: linear systems, differential equations, optimization, proofs.
+          My projects are where that foundation gets stress-tested. I’m especially interested in estimation + control
+          loops that make good <strong>real-time decisions under constraints</strong> and stay stable and trustworthy in the real world.
+        </p>
+    </br>
+        <p>
+            <strong>Tools: </strong>Python, C++, Julia, Arduino, Linux, Git.
+        </p>
+      </section>
+
+      <section id="projects" class="card panel">
+        <h2>Featured projects</h2>
+        <div class="list">
+          <div class="item">
+            <b>Self-balancing table (ball-on-plate)</b>
+            <small>Closed-loop control + <strong>computer vision</strong> tracking for state estimation (camera-based ball position) as a compact autonomy testbed.</small>
+            <div class="links">
+              <a href="https://github.com/JoshMcConkie/control-lab" target="_blank" rel="noreferrer">Repo</a>
+            </div>
+          </div>
+          <div class="item">
+            <b>Quantum photonics tooling</b>
+            <small>Numerical experiments around density operators / fidelity; currently focused on <strong>performance optimization in Julia</strong> (profiling, refactors, benchmarking).</small>
+            <div class="links">
+              <a href="https://github.com/JacobGunnell/genqo.jl" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </div>
+          <div class="item">
+            <b>Course + lab builds</b>
+            <small>Signals, circuits, data structures, math foundations.</small>
+          </div>
+        </div>
+      </section>
+
+      <section id="focus" class="card panel">
+        <h2>Current focus</h2>
+        <div class="list">
+          <div class="item"><b>Control + robustness</b><small>Real-time decision-making, optimization-based control under constraints (currently learning MPC), stability, and failure modes.</small></div>
+          <div class="item"><b>Estimation</b><small>Kalman filtering, sensor fusion, and system ID.</small></div>
+          <div class="item"><b>Signals &amp; systems</b><small>Filtering and frequency-domain intuition.</small></div>
+          <div class="item"><b>Learning for autonomy (exploring)</b><small>Taking an ML/RL course next semester; interested in where learning fits cleanly into perception, estimation, and control.</small></div>
+        </div>
+      </section>
+
+      <section id="coursework" class="card panel compact">
+        <h2>Selected coursework (A grades)</h2>
+        <p>Courses where I earned an A.</p>
+        <div class="list">
+          <!-- <div class="item"><b>Introduction to Computer Science</b><small>A</small></div> -->
+          <div class="item"><b>Data Structures (C++)</b><small>A</small></div>
+          <div class="item"><b>Calculus II</b><small>A</small></div>
+          <div class="item"><b>Calculus III (Multivariable)</b><small>A</small></div>
+          <div class="item"><b>Linear Algebra</b><small>A</small></div>
+          <div class="item"><b>Computational Linear Algebra</b><small>A</small></div>
+          <div class="item"><b>Ordinary Differential Equations</b><small>A</small></div>
+          <div class="item"><b>Fundamentals of Mathematics (Proofs)</b><small>A</small></div>
+          <div class="item"><b>Circuits</b><small>A</small></div>
+        </div>
+      </section>
+
+      <section id="planned" class="card panel compact">
+        <h2>Planned coursework (next year)</h2>
+        <p>Upcoming courses I’m taking to build depth for autonomy/control work.</p>
+        <div class="list">
+          <div class="item"><b>Advanced Machine Learning</b><small>ML/RL focus</small></div>
+          <div class="item"><b>Signals &amp; Systems</b><small>Systems + filtering foundations</small></div>
+          <div class="item"><b>Mathematical Analysis</b><small>Rigorous proof-based analysis</small></div>
+          <div class="item"><b>Algorithm Design &amp; Optimization</b><small>Optimization + computational thinking</small></div>
+          <div class="item"><b>Design of Control Systems</b><small>Modern control design</small></div>
+        </div>
+      </section>
+
+      <section id="contact" class="card panel">
+        <h2>Contact</h2>
+        <div class="list">
+          <div class="item">
+            <b>Email</b>
+            <small><a href="mailto:joshuamcconkie@gmail.com">joshuamcconkie@gmail.com</a></small>
+          </div>
+          <div class="item">
+            <b>GitHub</b>
+            <small><a href="https://github.com/JoshMcConkie" target="_blank" rel="noreferrer">github.com/JoshMcConkie</a></small>
+          </div>
+          <div class="item">
+            <b>LinkedIn</b>
+            <small><a href="https://www.linkedin.com/in/joshuamcconkie" target="_blank" rel="noreferrer">linkedin.com/in/joshuamcconkie</a></small>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Josh McConkie</div>
+      <div class="mono">GitHub Pages • no frameworks</div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
