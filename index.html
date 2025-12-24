@@ -116,6 +116,21 @@
     }
 
     .hero{margin-top: 18px; padding: 22px 20px;}
+    .heroInner{display:flex; align-items:flex-start; justify-content:space-between; gap:18px;}
+    .heroText{min-width:0;}
+    .avatar{
+      width:112px; height:112px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      box-shadow: 0 10px 35px rgba(0,0,0,.35);
+      flex: 0 0 auto;
+    }
+    @media (max-width: 700px){
+      .heroInner{flex-direction: column-reverse; align-items:flex-start;}
+      .avatar{width:96px; height:96px;}
+    }
     h1{
       margin:0;
       font-size: clamp(32px, 4.8vw, 52px);
@@ -182,7 +197,7 @@
       </nav>
 
       <div class="pillRow" aria-label="Links">
-        <a class="pill" href="./B_Joshua_McConkie_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+        <a class="pill" href="./assets/B_Joshua_McConkie_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
         <a class="pill" href="https://github.com/JoshMcConkie" target="_blank" rel="noreferrer">GitHub</a>
         <a class="pill" href="https://www.linkedin.com/in/joshuamcconkie" target="_blank" rel="noreferrer">LinkedIn</a>
         <a class="pill" href="mailto:joshuamcconkie@gmail.com">Email</a>
@@ -192,21 +207,28 @@
 
   <main class="wrap">
     <section class="card hero" aria-label="Intro">
-      <h1>Autonomy & control, built on real systems.</h1>
-      <p class="tagline">
-        I’m a <strong>BYU ACME</strong> (Applied &amp; Computational Mathematics) student working toward a PhD track in
-        <strong>autonomous systems and control</strong>. I’m especially drawn to <strong>real-time control</strong>: making decisions under constraints,
-        reacting fast, and adjusting when the world inevitably gets messy (noise, delays, saturation, and hardware that refuses to behave).
-      </p>
+      <div class="heroInner">
+        <div class="heroText">
+          <h1>Autonomy &amp; control, built on real systems.</h1>
+          <p class="tagline">
+            I’m a <strong>BYU ACME</strong> (Applied &amp; Computational Mathematics) student working toward a PhD track in
+            <strong>autonomous systems and control</strong>. I’m especially drawn to <strong>real-time control</strong>: making decisions under constraints,
+            reacting fast, and adjusting when the world inevitably gets messy (noise, delays, saturation, and hardware that refuses to behave).
+          </p>
 
-      <div class="chips" aria-label="Keywords">
-        <span class="chip">BYU ACME</span>
-        <span class="chip">real-time control</span>
-        <span class="chip">state estimation</span>
-        <span class="chip">signals &amp; systems</span>
-        <span class="chip">optimization</span>
-        <!-- <span class="chip">embedded + sensors</span> -->
-        <span class="chip">learning for autonomy (exploring)</span>
+          <div class="chips" aria-label="Keywords">
+            <span class="chip">BYU ACME</span>
+            <span class="chip">real-time control</span>
+            <span class="chip">state estimation</span>
+            <span class="chip">signals &amp; systems</span>
+            <span class="chip">optimization</span>
+            <!-- <span class="chip">embedded + sensors</span> -->
+            <span class="chip">learning for autonomy (exploring)</span>
+          </div>
+        </div>
+
+        <!-- Put your photo at: /assets/profile.jpg (or update the src below) -->
+        <img class="avatar" src="./assets/profile.jpg" alt="Portrait of Josh McConkie" loading="lazy" />
       </div>
     </section>
 
