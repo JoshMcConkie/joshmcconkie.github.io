@@ -38,6 +38,9 @@ export const siteConfig = {
       description:
         "Built a closed-loop control testbed with camera-based ball tracking, real-time state estimation, and PID control. Developed ESP32 firmware for two-servo actuation and IMU feedback over I2C, along with supporting custom PCB hardware.",
       link: "https://github.com/JoshMcConkie/ball-plate",
+      image:
+        "https://raw.githubusercontent.com/JoshMcConkie/ball-plate/main/working_build_v2.gif",
+      imageAlt: "Ball-on-plate system tracking and balancing a ball",
       skills: [
         "Python",
         "C",
@@ -52,6 +55,10 @@ export const siteConfig = {
       description:
         "Created a configurable simulator for receding-horizon multi-agent coverage planning. The planner achieved 97–99% of full-horizon coverage while reducing runtime by 2.5–10× across benchmark scenarios.",
       link: "https://github.com/JoshMcConkie/multi-agent-coverage-planner",
+      image:
+        "https://raw.githubusercontent.com/JoshMcConkie/multi-agent-coverage-planner/master/results/same_start/grid_8x8/same_start__pareto__seriesby_agents__method_rolling_horizon_greedy_solve_steps_8__grid_8x8.png",
+      imageAlt:
+        "Performance comparison for receding-horizon multi-agent coverage planning",
       skills: [
         "Python",
         "Path Planning",
@@ -84,6 +91,7 @@ export const siteConfig = {
       company: "BYU Electrical Engineering Department",
       title: "Research Assistant — Quantum Photonics Simulation",
       dateRange: "Nov 2025 - Jan 2026",
+      link: "https://github.com/QuantumSavory/Genqo.jl",
       bullets: [
         "Optimized a Julia research simulation codebase, achieving an approximately 60× speedup through allocation reduction and hot-loop refactoring",
         "Contributed to the optimization and simulation of a hybrid Gaussian and non-Gaussian quantum-optics state engine",
