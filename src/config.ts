@@ -12,7 +12,7 @@ export const siteConfig = {
   },
 
   aboutMe:
-    "I am an Applied and Computational Mathematics student at Brigham Young University interested in autonomous systems and robotics. My work combines mathematical modeling with hands-on engineering, with a particular focus on state estimation, path planning, and controls. Through research and projects, I have built multi-agent planning simulations, developed approximation guarantees for resource-allocation algorithms, and designed a vision-based feedback control system with custom embedded hardware. I am seeking opportunities in autonomy and robotics.",
+    "I am an Applied and Computational Mathematics student at Brigham Young University interested in autonomous systems and optimization. My work combines mathematical modeling with hands-on engineering, with a particular focus on state estimation, path planning, and controls. Through research and projects, I have built multi-agent planning simulations, developed approximation guarantees for resource-allocation algorithms, and designed a vision-based feedback control system with custom embedded hardware. I am seeking opportunities in autonomy and robotics.",
 
   skills: [
     "State Estimation",
