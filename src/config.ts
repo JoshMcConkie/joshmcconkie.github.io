@@ -1,8 +1,7 @@
 export const siteConfig = {
   name: "Joshua McConkie",
-  title: "Applied & Computational Mathematics Student | Autonomy & Optimization",
-  description:
-    "Portfolio of Joshua McConkie, a BYU applied mathematics student focused on state estimation, path planning, and control systems for autonomy and robotics.",
+  title: "Applied Mathematics | Modeling, Optimization & Software",
+  description: "Portfolio of Joshua McConkie, a BYU applied and computational mathematics student building mathematical software, simulations, optimization tools, and engineering systems.",
   accentColor: "#1d4ed8",
 
   social: {
@@ -11,22 +10,21 @@ export const siteConfig = {
     github: "https://github.com/JoshMcConkie",
   },
 
-  aboutMe:
-    "I am an Applied and Computational Mathematics student at Brigham Young University interested in autonomous systems and optimization. My work combines mathematical modeling with hands-on engineering, with a particular focus on state estimation, path planning, and controls. Through research and projects, I have built multi-agent planning simulations, developed approximation guarantees for resource-allocation algorithms, and designed a vision-based feedback control system with custom embedded hardware. I am seeking opportunities in autonomy and robotics.",
+  aboutMe: "I am an Applied and Computational Mathematics student at Brigham Young University who enjoys using mathematics and software to solve technical problems. My experience includes optimization, simulation, numerical computing, data analysis, control systems, and embedded development. Through research and independent projects, I have built multi-agent planning simulations, analyzed approximation guarantees for resource-allocation algorithms, optimized scientific software, and developed a vision-based feedback control system with custom embedded hardware. I am seeking technical internship opportunities for Summer 2027, particularly in software engineering, modeling and simulation, optimization, robotics, and autonomous systems.",
 
   skills: [
-    "State Estimation",
-    "Path Planning",
-    "Control Systems",
+    "Mathematical Modeling",
     "Optimization",
+    "Simulation",
+    "Numerical Computing",
+    "Data Analysis",
     "Multi-Agent Systems",
-    "Robotics",
+    "Feedback Control",
     "Python",
     "C/C++",
     "Julia",
     "MATLAB",
     "OpenCV",
-    "ESP32",
     "Embedded Systems",
     "Linux",
     "Git",
