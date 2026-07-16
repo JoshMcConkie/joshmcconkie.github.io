@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Joshua McConkie",
-  title: "Applied Mathematics Student | Autonomy & Robotics",
+  title: "Applied & Computational Mathematics Student | Autonomy & Optimization",
   description:
     "Portfolio of Joshua McConkie, a BYU applied mathematics student focused on state estimation, path planning, and control systems for autonomy and robotics.",
   accentColor: "#1d4ed8",
