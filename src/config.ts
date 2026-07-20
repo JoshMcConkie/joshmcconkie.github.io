@@ -1,3 +1,5 @@
+import technicalBriefUrl from "../assets/Centralized_vs_Decentralized_MRTA.pdf?url";
+
 export const siteConfig = {
   name: "Joshua McConkie",
   title: "Applied Mathematics | Modeling, Optimization & Software",
@@ -79,6 +81,8 @@ export const siteConfig = {
       company: "BYU IDeA Labs",
       title: "Research Assistant — Multi-Agent Planning & Optimization",
       dateRange: "Mar 2026 - Present",
+      link: technicalBriefUrl,
+      linkLabel: "Related technical writing: Centralized vs. Decentralized MRTA",
       bullets: [
         "Developed a multi-agent grid path planner that achieved 97–99% of full-horizon coverage with a 2.5–10× runtime reduction",
         "Proved a 50% approximation guarantee for a robust round-robin resource planner against the optimal solution",
