@@ -2,8 +2,10 @@ import technicalBriefUrl from "../assets/Centralized_vs_Decentralized_MRTA.pdf?u
 
 export const siteConfig = {
   name: "Joshua McConkie",
-  title: "Applied Mathematics | Modeling, Optimization & Software",
-  description: "Portfolio of Joshua McConkie, a BYU applied and computational mathematics student building mathematical software, simulations, optimization tools, and engineering systems.",
+  title: "Robotics & Autonomy | Applied Mathematics Student",
+  recruitingIntro: "Brigham Young University · Expected graduation: April 2028",
+  internshipInterests: "Seeking Summer 2027 internships in robotics, autonomy, perception, and software engineering.",
+  description: "Joshua McConkie, BYU Applied and Computational Mathematics student graduating April 2028. Seeking Summer 2027 robotics, autonomy, perception, and software engineering internships. RobotBoat Perception Lead and multi-agent planning researcher.",
   accentColor: "#1d4ed8",
 
   social: {
@@ -12,7 +14,33 @@ export const siteConfig = {
     github: "https://github.com/JoshMcConkie",
   },
 
-  aboutMe: "I am an Applied and Computational Mathematics student at Brigham Young University who enjoys using mathematics and software to solve technical problems. My experience includes optimization, simulation, numerical computing, data analysis, control systems, and embedded development. Through research and independent projects, I have built multi-agent planning simulations, analyzed approximation guarantees for resource-allocation algorithms, optimized scientific software, and developed a vision-based feedback control system with custom embedded hardware. I am seeking technical internship opportunities for Summer 2027, particularly in software engineering, modeling and simulation, optimization, robotics, and autonomous systems.",
+  aboutMe: "I’m an Applied and Computational Mathematics student at Brigham Young University, graduating in April 2028. I enjoy the math behind robotics, and I like building things to see how those ideas work in practice. I’m seeking Summer 2027 internships in robotics, autonomy, perception, and software engineering.\n\nMy experience includes multi-agent planning and optimization research at BYU IDeA Labs, scientific simulation, and a camera-based feedback control system. I’m the Perception Lead for BYU’s RobotBoat Team and Vice President of the BYU SIAM Chapter.\n\nI co-designed Mimic’s robotics architecture and skill-transition graph, and directed integration of perception with simulated robot execution. My teams earned first place at the 2026 NVIDIA × Nebius × Antioch × Toloka Physical AI Hackathon and second place at BYU’s HireReady Hackathon.",
+
+  portrait: {
+    image: "/images/portrait.jpg",
+    imageAlt: "Portrait of Joshua McConkie",
+    placeholder: "Portrait photo to come",
+  },
+
+  currentRoles: [
+    { organization: "BYU RobotBoat Team", title: "Perception Lead" },
+    { organization: "BYU SIAM Chapter", title: "Vice President" },
+  ],
+
+  recognition: [
+    {
+      placement: "1st Place · 2026",
+      event: "Physical AI Hackathon",
+      organizers: "NVIDIA × Nebius × Antioch × Toloka",
+      href: "#physical-ai",
+    },
+    {
+      placement: "2nd Place · 2026",
+      event: "BYU HireReady Hackathon — Robot Learning",
+      organizers: "Mimic · 24-hour team competition",
+      href: "#mimic",
+    },
+  ],
 
   skills: [
     "Mathematical Modeling",
@@ -22,6 +50,9 @@ export const siteConfig = {
     "Data Analysis",
     "Multi-Agent Systems",
     "Feedback Control",
+    "Robotics Architecture",
+    "Perception Pipeline Design",
+    "MuJoCo",
     "Python",
     "C/C++",
     "Julia",
@@ -33,6 +64,37 @@ export const siteConfig = {
   ],
 
   projects: [
+    {
+      name: "Mimic — Learning from Human Demonstration",
+      id: "mimic",
+      award: "2nd Place · BYU HireReady Hackathon",
+      description:
+        "Co-created a system that recognizes manipulation phases in human video, tracks object motion separately, and retargets pick-and-place tasks to a simulated Franka Panda in MuJoCo.",
+      highlights: [
+        "Co-designed the architecture and modular skill-transition graph, linking classifier labels to robot actions and validating the two highest-probability predictions against legal transitions.",
+        "Specified frame-aligned data and coordinate-mapping contracts, and selected proximity-based waypoint handoff while retaining measured final-arrival checks.",
+        "Directed implementation and integration through AI coding agents. The recorded simulation demonstrates grasp, transport, and release; robot motion uses conventional IK and control.",
+      ],
+      link: "https://pjhancock.github.io/Mimic/",
+      image: "/images/mimic.png",
+      imageAlt: "Mimic’s simulated Franka Panda carrying a red cube above the tabletop in MuJoCo",
+      skills: ["Robotics Architecture", "Skill Graphs", "Coordinate Retargeting", "MuJoCo"],
+    },
+    {
+      name: "Physical AI — Robot Integration & Evaluation",
+      id: "physical-ai",
+      award: "1st Place · Physical AI Hackathon · 2026",
+      description:
+        "Our team won the five-hour NVIDIA × Nebius × Antioch × Toloka Physical AI Hackathon with a vision-language-action evaluation and retraining workflow. My contribution centered on the robot-side integration path and control harness for an SO-101 arm.",
+      highlights: [
+        "Built and tested a control harness intended to connect model actions to LeRobot, with action validation, command clamping, and explicit control intents.",
+        "Investigated platform, device-mapping, and serial-connection limitations. The final demo ran the frontend and backend; the physical robot connection remained incomplete.",
+      ],
+      link: "",
+      image: "/images/physical-ai.png",
+      imageAlt: "Physical AI Sprint team on stage holding the first-place award beneath the event and sponsor banner",
+      skills: ["Python", "LeRobot Integration", "Action Validation", "Robot Control Harness"],
+    },
     {
       name: "Ball-on-Plate Balancing System",
       description:

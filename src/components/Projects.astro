@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from "../config";
+import PhotoPlaceholder from "./PhotoPlaceholder.astro";
 const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
 ---
 
@@ -23,6 +24,7 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
               {siteConfig.projects.map((project, index) => {
                 const Component = project.link ? "a" : "div";
                 const image = "image" in project ? project.image : undefined;
+                const placeholder = "photoPlaceholder" in project ? project.photoPlaceholder : undefined;
                 const imageAlt =
                   "imageAlt" in project ? project.imageAlt : project.name;
                 const linkProps = project.link
@@ -34,7 +36,7 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                   : {};
 
                 return (
-                  <div class="group relative">
+                  <div id={"id" in project ? project.id : undefined} class="group relative scroll-mt-24">
                     <Component
                       {...linkProps}
                       class={`block relative p-4 sm:p-6 md:p-8 bg-gray-50 rounded-xl sm:rounded-2xl border border-gray-200 transition-all duration-300 ${
@@ -62,7 +64,7 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                       )}
 
                       <div
-                        class={`grid gap-5 sm:gap-6 ${image ? "md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:items-center" : ""}`}
+                        class={`grid gap-5 sm:gap-6 ${image || placeholder ? "md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:items-start" : ""}`}
                       >
                         {image && (
                           <div class="overflow-hidden rounded-lg sm:rounded-xl border border-gray-200 bg-white aspect-video md:aspect-[4/3]">
@@ -75,6 +77,7 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                             />
                           </div>
                         )}
+                        {!image && placeholder && <PhotoPlaceholder label={placeholder} />}
 
                         <div class="space-y-4">
                           <div>
@@ -84,19 +87,31 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                             >
                               0{index + 1}
                             </span>
-                            <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mt-1">
+                            <h3 class={`text-xl sm:text-2xl font-bold text-gray-900 mt-1 ${project.link ? (image || placeholder ? "md:pr-14" : "pr-12 sm:pr-14") : ""}`}>
                               {project.name}
                             </h3>
+                            {"award" in project && project.award && (
+                              <p class="mt-3 text-xs sm:text-sm font-semibold" style={`color: ${siteConfig.accentColor}`}>{project.award}</p>
+                            )}
                           </div>
 
                           <p
-                            class={`text-base sm:text-lg text-gray-600 leading-relaxed ${project.link ? "pr-12 sm:pr-14 md:pr-16" : ""}`}
+                            class="text-base sm:text-lg text-gray-600 leading-relaxed"
                           >
                             {project.description}
                           </p>
+                        </div>
+
+                          {"highlights" in project && project.highlights && (
+                            <ul class:list={["space-y-3 text-sm leading-relaxed text-gray-600", (image || placeholder) && "md:col-span-2"]}>
+                              {project.highlights.map((point) => (
+                                <li class="border-l-2 border-gray-300 pl-3">{point}</li>
+                              ))}
+                            </ul>
+                          )}
 
                           {project.skills && project.skills.length > 0 && (
-                            <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-2">
+                            <div class:list={["flex flex-wrap gap-1.5 sm:gap-2 pt-2", (image || placeholder) && "md:col-span-2"]}>
                               {project.skills.map((skill) => (
                                 <span
                                   class={`px-2.5 sm:px-3 py-1 sm:py-1.5 bg-gray-900 text-white rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 ${
@@ -108,7 +123,6 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                               ))}
                             </div>
                           )}
-                        </div>
                       </div>
                     </Component>
                   </div>

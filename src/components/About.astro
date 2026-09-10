@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from "../config";
+import PhotoPlaceholder from "./PhotoPlaceholder.astro";
 ---
 
 <section id="about" class="p-8 sm:p-12 md:p-16 lg:p-24">
@@ -16,12 +17,44 @@ import { siteConfig } from "../config";
           style={`background-color: ${siteConfig.accentColor}`}
         >
         </div>
+        {siteConfig.portrait && (
+          <div class="mt-8 max-w-[160px] lg:max-w-[240px]">
+            {siteConfig.portrait.image ? (
+              <img src={siteConfig.portrait.image} alt={siteConfig.portrait.imageAlt} loading="lazy" width="480" height="600" class="aspect-[4/5] w-full rounded-xl object-cover" />
+            ) : (
+              <PhotoPlaceholder label={siteConfig.portrait.placeholder} portrait />
+            )}
+          </div>
+        )}
       </div>
 
       <div class="lg:col-span-8 space-y-8">
-        <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-600">
-          {siteConfig.aboutMe}
-        </p>
+        {siteConfig.aboutMe.split("\n\n").map((paragraph) => (
+          <p class="text-lg sm:text-xl leading-relaxed text-gray-600">{paragraph}</p>
+        ))}
+
+        {siteConfig.currentRoles?.length > 0 && (
+          <div class="grid gap-4 sm:grid-cols-2">
+            {siteConfig.currentRoles.map((role) => (
+              <div class="rounded-xl border border-gray-200 p-5">
+                <p class="text-sm font-medium" style={`color: ${siteConfig.accentColor}`}>{role.title}</p>
+                <p class="mt-2 font-semibold text-gray-900">{role.organization}</p>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {siteConfig.recognition?.length > 0 && (
+          <div class="space-y-3">
+            {siteConfig.recognition.map((award) => (
+              <a href={award.href} class="group block rounded-xl border border-gray-200 bg-gray-50 p-5 transition-colors hover:border-gray-400 focus-visible:outline-2 focus-visible:outline-offset-4" style={`outline-color: ${siteConfig.accentColor}`}>
+                <p class="text-sm font-semibold" style={`color: ${siteConfig.accentColor}`}>{award.placement}</p>
+                <p class="mt-2 font-semibold text-gray-900">{award.event} <span aria-hidden="true">↗</span></p>
+                <p class="mt-2 text-sm leading-relaxed text-gray-600">{award.organizers}</p>
+              </a>
+            ))}
+          </div>
+        )}
 
         <div class="pt-4">
           <div class="flex flex-wrap gap-3">
