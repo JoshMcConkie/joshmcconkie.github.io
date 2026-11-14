@@ -4,8 +4,8 @@ export const siteConfig = {
   name: "Joshua McConkie",
   title: "Robotics & Autonomy | Applied Mathematics Student",
   recruitingIntro: "Brigham Young University · Expected graduation: April 2028",
-  internshipInterests: "Seeking Summer 2027 internships in robotics, autonomy, perception, and software engineering.",
-  description: "Joshua McConkie, BYU Applied and Computational Mathematics student graduating April 2028. Seeking Summer 2027 robotics, autonomy, perception, and software engineering internships. RobotBoat Perception Lead and multi-agent planning researcher.",
+  roleSummary: "Robotics Research Assistant at Frost · Incoming Engineering Intern at Shield (Summer 2027)",
+  description: "Joshua McConkie, BYU applied math student and Robotics Research Assistant at Frost. Incoming Engineering Intern on Shield’s State Estimation team, Summer 2027.",
   accentColor: "#1d4ed8",
 
   social: {
@@ -14,7 +14,7 @@ export const siteConfig = {
     github: "https://github.com/JoshMcConkie",
   },
 
-  aboutMe: "I’m an Applied and Computational Mathematics student at Brigham Young University, graduating in April 2028. I enjoy the math behind robotics, and I like building things to see how those ideas work in practice. I’m seeking Summer 2027 internships in robotics, autonomy, perception, and software engineering.\n\nMy experience includes multi-agent planning and optimization research at BYU IDeA Labs, scientific simulation, and a camera-based feedback control system. I’m the Perception Lead for BYU’s RobotBoat Team and Vice President of the BYU SIAM Chapter.\n\nI co-designed Mimic’s robotics architecture and skill-transition graph, and directed integration of perception with simulated robot execution. My teams earned first place at the 2026 NVIDIA × Nebius × Antioch × Toloka Physical AI Hackathon and second place at BYU’s HireReady Hackathon.",
+  aboutMe: "I study Applied and Computational Mathematics at BYU. I’m a Robotics Research Assistant at Frost, and I’ll join Shield’s State Estimation team as an Engineering Intern in Summer 2027.\n\nMy experience includes multi-agent planning and optimization research at BYU IDeA Labs, scientific simulation, and a camera-based feedback control system. I’m the Perception Lead for BYU’s RobotBoat Team.\n\nI co-designed Mimic’s robotics architecture and skill-transition graph, and directed integration of perception with simulated robot execution. My teams earned first place at the 2026 NVIDIA × Nebius × Antioch × Toloka Physical AI Hackathon and second place at BYU’s HireReady Hackathon.",
 
   portrait: {
     image: "/images/portrait.jpg",
@@ -24,7 +24,6 @@ export const siteConfig = {
 
   currentRoles: [
     { organization: "BYU RobotBoat Team", title: "Perception Lead" },
-    { organization: "BYU SIAM Chapter", title: "Vice President" },
   ],
 
   recognition: [
@@ -55,7 +54,6 @@ export const siteConfig = {
     "MuJoCo",
     "Python",
     "C/C++",
-    "Julia",
     "MATLAB",
     "OpenCV",
     "Embedded Systems",
@@ -140,9 +138,15 @@ export const siteConfig = {
 
   experience: [
     {
+      company: "Frost",
+      title: "Robotics Research Assistant",
+      dateRange: "Sep 2026 - Present",
+      bullets: ["Preparing a robotics dataset for release and working on the accompanying paper"],
+    },
+    {
       company: "BYU IDeA Labs",
       title: "Research Assistant — Multi-Agent Planning & Optimization",
-      dateRange: "Mar 2026 - Present",
+      dateRange: "Mar 2026 - Sep 2026",
       link: technicalBriefUrl,
       linkLabel: "Related technical writing: Centralized vs. Decentralized MRTA",
       bullets: [
