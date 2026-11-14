@@ -4,8 +4,8 @@ export const siteConfig = {
   name: "Joshua McConkie",
   title: "Robotics & Autonomy | Applied Mathematics Student",
   recruitingIntro: "Brigham Young University · Expected graduation: April 2028",
-  roleSummary: "Robotics Research Assistant at Frost · Incoming Engineering Intern at Shield (Summer 2027)",
-  description: "Joshua McConkie, BYU applied math student and Robotics Research Assistant at Frost. Incoming Engineering Intern on Shield’s State Estimation team, Summer 2027.",
+  roleSummary: "Robotics Research Assistant at FRoST · Incoming Engineering Intern, State Estimation at Shield AI (Summer 2027)",
+  description: "Joshua McConkie, BYU applied math student and Robotics Research Assistant at FRoST. Incoming Engineering Intern on Shield AI’s State Estimation team, Summer 2027.",
   accentColor: "#1d4ed8",
 
   social: {
@@ -14,7 +14,7 @@ export const siteConfig = {
     github: "https://github.com/JoshMcConkie",
   },
 
-  aboutMe: "I study Applied and Computational Mathematics at BYU. I’m a Robotics Research Assistant at Frost, and I’ll join Shield’s State Estimation team as an Engineering Intern in Summer 2027.\n\nMy experience includes multi-agent planning and optimization research at BYU IDeA Labs, scientific simulation, and a camera-based feedback control system. I’m the Perception Lead for BYU’s RobotBoat Team.\n\nI co-designed Mimic’s robotics architecture and skill-transition graph, and directed integration of perception with simulated robot execution. My teams earned first place at the 2026 NVIDIA × Nebius × Antioch × Toloka Physical AI Hackathon and second place at BYU’s HireReady Hackathon.",
+  aboutMe: "I study applied and computational mathematics at BYU (ACME), with interests in robotics and autonomy. I’m the Perception Lead for BYU’s RoboBoat Team, and my projects range from a camera-guided balancing system to a multi-agent coverage simulator.",
 
   portrait: {
     image: "/images/portrait.jpg",
@@ -22,81 +22,25 @@ export const siteConfig = {
     placeholder: "Portrait photo to come",
   },
 
-  currentRoles: [
-    { organization: "BYU RobotBoat Team", title: "Perception Lead" },
-  ],
-
-  recognition: [
-    {
-      placement: "1st Place · 2026",
-      event: "Physical AI Hackathon",
-      organizers: "NVIDIA × Nebius × Antioch × Toloka",
-      href: "#physical-ai",
-    },
-    {
-      placement: "2nd Place · 2026",
-      event: "BYU HireReady Hackathon — Robot Learning",
-      organizers: "Mimic · 24-hour team competition",
-      href: "#mimic",
-    },
-  ],
-
   skills: [
-    "Mathematical Modeling",
-    "Optimization",
-    "Simulation",
-    "Numerical Computing",
-    "Data Analysis",
-    "Multi-Agent Systems",
-    "Feedback Control",
-    "Robotics Architecture",
-    "Perception Pipeline Design",
-    "MuJoCo",
     "Python",
     "C/C++",
-    "MATLAB",
     "OpenCV",
+    "ROS 2",
+    "Optimization",
+    "Perception",
+    "Multi-Agent Planning",
+    "Feedback Control",
     "Embedded Systems",
-    "Linux",
-    "Git",
   ],
 
   projects: [
     {
-      name: "Mimic — Learning from Human Demonstration",
-      id: "mimic",
-      award: "2nd Place · BYU HireReady Hackathon",
-      description:
-        "Co-created a system that recognizes manipulation phases in human video, tracks object motion separately, and retargets pick-and-place tasks to a simulated Franka Panda in MuJoCo.",
-      highlights: [
-        "Co-designed the architecture and modular skill-transition graph, linking classifier labels to robot actions and validating the two highest-probability predictions against legal transitions.",
-        "Specified frame-aligned data and coordinate-mapping contracts, and selected proximity-based waypoint handoff while retaining measured final-arrival checks.",
-        "Directed implementation and integration through AI coding agents. The recorded simulation demonstrates grasp, transport, and release; robot motion uses conventional IK and control.",
-      ],
-      link: "https://pjhancock.github.io/Mimic/",
-      image: "/images/mimic.png",
-      imageAlt: "Mimic’s simulated Franka Panda carrying a red cube above the tabletop in MuJoCo",
-      skills: ["Robotics Architecture", "Skill Graphs", "Coordinate Retargeting", "MuJoCo"],
-    },
-    {
-      name: "Physical AI — Robot Integration & Evaluation",
-      id: "physical-ai",
-      award: "1st Place · Physical AI Hackathon · 2026",
-      description:
-        "Our team won the five-hour NVIDIA × Nebius × Antioch × Toloka Physical AI Hackathon with a vision-language-action evaluation and retraining workflow. My contribution centered on the robot-side integration path and control harness for an SO-101 arm.",
-      highlights: [
-        "Built and tested a control harness intended to connect model actions to LeRobot, with action validation, command clamping, and explicit control intents.",
-        "Investigated platform, device-mapping, and serial-connection limitations. The final demo ran the frontend and backend; the physical robot connection remained incomplete.",
-      ],
-      link: "",
-      image: "/images/physical-ai.png",
-      imageAlt: "Physical AI Sprint team on stage holding the first-place award beneath the event and sponsor banner",
-      skills: ["Python", "LeRobot Integration", "Action Validation", "Robot Control Harness"],
-    },
-    {
       name: "Ball-on-Plate Balancing System",
       description:
-        "Built a closed-loop control testbed with camera-based ball tracking, real-time state estimation, and PID control. Developed ESP32 firmware for two-servo actuation and IMU feedback over I2C, along with supporting custom PCB hardware.",
+        "Built a camera-guided system that balances a ball on a tilting plate using PID control.",
+      id: "ball-on-plate",
+      highlights: ["Developed camera-based tracking, ESP32 firmware for two-servo actuation and IMU feedback over I2C, and supporting custom PCB hardware."],
       link: "https://github.com/JoshMcConkie/ball-plate",
       image:
         "https://raw.githubusercontent.com/JoshMcConkie/ball-plate/main/working_build_v2.gif",
@@ -113,7 +57,9 @@ export const siteConfig = {
     {
       name: "Multi-Agent Coverage Planner",
       description:
-        "Created a configurable simulator for receding-horizon multi-agent coverage planning. The planner achieved 97–99% of full-horizon coverage while reducing runtime by 2.5–10× across benchmark scenarios.",
+        "Built a simulator to study the tradeoff between planning time and multi-agent coverage.",
+      id: "coverage-planner",
+      highlights: ["On an 8×8 grid with 1–7 agents and eight-step paths, planning 3–4 steps at a time retained roughly 97–99% of full-horizon greedy coverage on average and ran 2.5–10× faster."],
       link: "https://github.com/JoshMcConkie/multi-agent-coverage-planner",
       image:
         "https://raw.githubusercontent.com/JoshMcConkie/multi-agent-coverage-planner/master/results/same_start/grid_8x8/same_start__pareto__seriesby_agents__method_rolling_horizon_greedy_solve_steps_8__grid_8x8.png",
@@ -128,6 +74,36 @@ export const siteConfig = {
       ],
     },
     {
+      name: "Mimic — Learning from Human Demonstration",
+      id: "mimic",
+      award: "2nd Place · BYU HireReady Hackathon",
+      description:
+        "Co-created a system that turns human demonstration video into pick-and-place tasks for a simulated Franka Panda in MuJoCo.",
+      highlights: [
+        "Co-designed the architecture and skill-transition graph to map recognized actions to valid robot movements.",
+        "Directed implementation and integration through AI coding agents; the recorded simulation demonstrates grasp, transport, and release using conventional inverse kinematics and control.",
+      ],
+      link: "https://pjhancock.github.io/Mimic/",
+      image: "/images/mimic.png",
+      imageAlt: "Mimic’s simulated Franka Panda carrying a red cube above the tabletop in MuJoCo",
+      skills: ["Robotics Architecture", "Skill Graphs", "Coordinate Retargeting", "MuJoCo"],
+    },
+    {
+      name: "Physical AI — Robot Integration & Evaluation",
+      id: "physical-ai",
+      award: "1st Place · Physical AI Hackathon · 2026",
+      description:
+        "Our team won the NVIDIA × Nebius × Antioch × Toloka Physical AI Hackathon with a vision-language-action evaluation and retraining workflow.",
+      highlights: [
+        "Built and tested a control harness intended to connect model actions to LeRobot, with action validation, command clamping, and explicit control intents.",
+        "Investigated platform, device-mapping, and serial-connection limitations. The final demo ran the frontend and backend; the physical robot connection remained incomplete.",
+      ],
+      link: "",
+      image: "/images/physical-ai.png",
+      imageAlt: "Physical AI Sprint team on stage holding the first-place award beneath the event and sponsor banner",
+      skills: ["Python", "LeRobot Integration", "Action Validation", "Robot Control Harness"],
+    },
+    {
       name: "Circuit Analysis Solver",
       description:
         "Programmed a C++ modified-nodal-analysis solver for resistor networks and independent sources, representing circuits as linear systems to calculate node voltages and component currents.",
@@ -138,10 +114,23 @@ export const siteConfig = {
 
   experience: [
     {
-      company: "Frost",
+      company: "FRoST",
       title: "Robotics Research Assistant",
       dateRange: "Sep 2026 - Present",
-      bullets: ["Preparing a robotics dataset for release and working on the accompanying paper"],
+      bullets: [
+        "Organizing DB3-to-MCAP conversion with AI coding agents, selecting data to retain, and investigating timing issues and dataset usability",
+        "Setting up website documentation, contributing the paper’s data structure section, and evaluating dataset hosting options",
+      ],
+    },
+    {
+      company: "Brigham Young University",
+      title: "RoboBoat Perception Lead",
+      dateRange: "Sep 2026 - Present",
+      bullets: [
+        "Leading the perception team’s technical direction and turning system requirements into implementation tasks",
+        "Guiding architecture and evaluating approaches for sensor fusion, state estimation, and vision-based detection",
+        "Overseeing ROS 2 node responsibilities and interfaces across the perception system",
+      ],
     },
     {
       company: "BYU IDeA Labs",
@@ -161,8 +150,7 @@ export const siteConfig = {
       dateRange: "Nov 2025 - Jan 2026",
       link: "https://github.com/QuantumSavory/Genqo.jl",
       bullets: [
-        "Optimized a Julia research simulation codebase, achieving an approximately 60× speedup through allocation reduction and hot-loop refactoring",
-        "Contributed to the optimization and simulation of a hybrid Gaussian and non-Gaussian quantum-optics state engine",
+        "Contributed to a team effort to optimize a Julia simulation engine for hybrid Gaussian and non-Gaussian quantum-optics states",
       ],
     },
     {
@@ -182,10 +170,10 @@ export const siteConfig = {
       degree: "B.S. in Applied and Computational Mathematics",
       dateRange: "Expected Apr 2028",
       achievements: [
-        "Major GPA: 4.00/4.00; ACT: 35/36",
-        "BYU Merit Scholarship; Bain Case Competition second-round participant (2025)",
+        "Major GPA: 4.00/4.00",
+        "BYU Merit Scholarship",
         "AI Association team lead and Competitive Programming Association member",
-        "Coursework in analysis, differential equations, computational linear algebra, signals and systems, circuits, computer systems, data structures, and econometrics",
+        "ACME core curriculum: mathematical analysis, algorithm design and optimization, probabilistic modeling, and dynamical systems and control",
       ],
     },
   ],
